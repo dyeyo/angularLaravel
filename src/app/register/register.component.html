@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 justify-center mt-5">
+            <div class="card">
+                <h5 class="card-title">Registro</h5>
+                <form [formGroup]="form" (submit)="onSubmit()"> 
+                    <div class="form-group">
+                        <label for="">Nombre Completo</label>
+                        <input type="text" class="form-control" formControlName="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Correo Electronico</label>
+                        <input type="email" class="form-control" formControlName="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Clave</label>
+                        <input type="password" class="form-control" formControlName="password" name="password" required>
+                    </div>
+                    <hr>
+                    <button type="submit" class="btn btn-success btn-block">Registrarse</button>
+                </form>
+                <a [routerLink]="['/login']">Si ya tiene cuenta, entra aquí</a>
+            </div>
+        </div>
+    </div>
+</div>

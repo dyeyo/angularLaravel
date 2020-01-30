@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 justify-center mt-5">
+            <div class="card">
+                <h5 class="card-title">Crear Agente</h5>
+                <form [formGroup]="form" (submit)="saveAgent()"> 
+                    <div class="form-group">
+                        <label for="">Nombre Completo</label>
+                        <input type="text" class="form-control" formControlName="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Nombre Agente</label>
+                        <input type="email" class="form-control" formControlName="agente" name="agente" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Cedula</label>
+                        <input type="text" class="form-control" formControlName="cedula" name="cedula" required>
+                    </div>
+                    <hr>
+                    <button type="submit" class="btn btn-success btn-block">Registrarse</button>
+                </form>
+
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre Completo</th>
+                        <th scope="col">Nombre Agente</th>
+                        <th scope="col">Cedula</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let agente of agentes ">
+                        <th scope="row">{{agente.id}}</th>
+                        <td>{{agente.nombre}}</td>
+                        <td>{{agente.agente}}</td>
+                        <td>{{agente.cedula}}</td>
+
+
+                        <td> <a class="btn btn-warning btn-sm text-white" routerLink="/editar_agente/{{agente.id}}">Editar</a></td >
+                        <td> <a class="btn btn-danger btn-sm text-white" (click)="deleteData(agente.id)">Eliminar</a></td >
+                        <td> <a class="btn btn-danger btn-sm text-white" (click)="editData(agente.id)">Eliminar</a></td >
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</div>
