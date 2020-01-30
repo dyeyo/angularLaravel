@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../interfaces/user.interfaces';
 import { environment } from 'src/environments/environment';
 import { Agente } from '../interfaces/agente.interface';
+import { Cliente } from '../interfaces/cliente.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -32,14 +33,13 @@ export class AccountService {
   }
 
   getById(id){
-		if(id){
-			return this.http.get(environment.api + '/agente/'+id);
-		}
-	}
-  put(agente: Agente){
-		const headers = new HttpHeaders({'Content-Type':'application/json'});
-		return this.http.put(environment.api + '/update_agente/' + agente, {headers: headers});
-	}
+		return this.http.get(environment.api + '/agente/'+id);
+  }
+  
+  editAgente(id: number, agente: Agente){
+		return this.http.put(environment.api + `/update_agente/${id}`, agente);
+  }
+   
 	delete(id){
 		return this.http.delete(environment.api + '/delete_agente/' + id);
 	}

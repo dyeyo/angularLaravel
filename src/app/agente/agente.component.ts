@@ -15,6 +15,7 @@ export class AgenteComponent implements OnInit {
   form:FormGroup;
   agentes;
   editarAgente:Agente;
+  modal:false;
   constructor(private accountService: AccountService,
               private router: Router) { }
 
@@ -30,8 +31,10 @@ export class AgenteComponent implements OnInit {
   saveAgent(){
     if (this.form.valid) {
       this.accountService.createAgente(this.form.value).subscribe(res=>{
-        this.agentes=res
+        this.agentes=res;
         this.getData();
+        this.form.reset();
+        alert('agregado con exito')
       })
     }
   }

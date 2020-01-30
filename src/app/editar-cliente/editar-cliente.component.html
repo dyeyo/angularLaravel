@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav navbar-right">
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/agentes']">Agentes</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" [routerLink]="['/clientes']">Clientes</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 justify-center mt-5">
+              <div class="card">
+                  <h5 class="card-title">Crear Clientes</h5>
+                  <form [formGroup]="form" (submit)="onUpdate()"> 
+                    <div class="form-group">
+                        <label for="">Nombre Completo</label>
+                        <input type="text" class="form-control" formControlName="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Cedula</label>
+                        <input type="text" class="form-control" formControlName="cedula" name="cedula" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Celular</label>
+                      <input type="text" class="form-control" formControlName="celular" name="celular" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Dirección</label>
+                      <input type="text" class="form-control" formControlName="direccion" name="direccion" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Ciudad</label>
+                      <input type="text" class="form-control" formControlName="ciudad" name="ciudad" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Agente</label>
+                      <select  class="form-control" formControlName="id_agente" name="id_agente" required>
+                      <option *ngFor="let agente of agentes" value="{{agente.id}}">{{agente.nombre}}</option>  
+                      </select>
+                    </div>
+                    <hr>
+                    <button type="submit" class="btn btn-success btn-block">Actualizar Cliente</button>
+                </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  

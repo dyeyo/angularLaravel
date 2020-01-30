@@ -13,6 +13,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AgenteComponent } from './agente/agente.component';
 import { EditarAgenteComponent } from './editar-agente/editar-agente.component';
+import { EditarClienteComponent } from './editar-cliente/editar-cliente.component';
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
@@ -26,7 +27,8 @@ export function tokenGetter() {
     HomeComponent,
     ClientesComponent,
     AgenteComponent,
-    EditarAgenteComponent
+    EditarAgenteComponent,
+    EditarClienteComponent
   ],
   imports: [
     BrowserModule,
