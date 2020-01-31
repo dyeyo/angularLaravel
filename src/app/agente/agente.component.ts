@@ -14,10 +14,13 @@ export class AgenteComponent implements OnInit {
 
   form:FormGroup;
   agentes;
-  editarAgente:Agente;
-  modal:false;
+
   constructor(private accountService: AccountService,
               private router: Router) { }
+
+  get cedula() { return this.form.get('cedula'); }
+  get nombre() { return this.form.get('nombre'); }
+  get agente() { return this.form.get('agente'); }
 
   ngOnInit() {
     this.getData()
@@ -58,5 +61,8 @@ export class AgenteComponent implements OnInit {
     })
   }
  
+ get name(){return  this.form.get('nombre')}
+ get cedula(){return  this.form.get('cedula')}
+ get agente(){return  this.form.get('agente')}
 
 }

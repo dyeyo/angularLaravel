@@ -17,6 +17,13 @@ export class ClientesComponent implements OnInit {
   agentes;
   editarAgente:Cliente;
 
+  get cedula() { return this.form.get('cedula'); }
+  get nombre() { return this.form.get('nombre'); }
+  get celular() { return this.form.get('celular'); }
+  get direccion() { return this.form.get('direccion'); }
+  get ciudad() { return this.form.get('ciudad'); }
+  get id_agente() { return this.form.get('id_agente'); }
+
   constructor(private accountService: AccountService,
               private clienteService: ClienteServiceService,
               private router: Router) { }

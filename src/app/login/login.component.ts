@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
 
     /* Instanciar servicio de accountService */
   login() {
+    alert('Por favor espere, estamos procesando los datos')
     this.accountService.login(this.form.value).subscribe((r: any) => {
       localStorage.setItem('token', r.success.token);
       this.router.navigateByUrl('agentes');

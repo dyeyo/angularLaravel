@@ -14,6 +14,10 @@ export class EditarAgenteComponent implements OnInit {
   form: FormGroup;
   id: number;
 
+  get cedula() { return this.form.get('cedula'); }
+  get nombre() { return this.form.get('nombre'); }
+  get agente() { return this.form.get('agente'); }
+  
   constructor(private accountService: AccountService, private route: ActivatedRoute, private router: Router) { 
       this.form=new FormGroup({
       cedula: new FormControl('',Validators.required),

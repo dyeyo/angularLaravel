@@ -7,14 +7,17 @@
                     <div class="form-group">
                         <label for="">Nombre Completo</label>
                         <input type="text" class="form-control" formControlName="nombre" name="nombre" required>
+                        <span class="text-danger"*ngIf="nombre.invalid && (nombre.ditry || nombre.touched) ">Este campo es Obligarotio</span> 
                     </div>
                     <div class="form-group">
                         <label for="">Nombre Agente</label>
                         <input type="email" class="form-control" formControlName="agente" name="agente" required>
+                        <span class="text-danger"*ngIf="agente.invalid && (agente.ditry || agente.touched) ">Este campo es Obligarotio</span> 
                     </div>
                     <div class="form-group">
                         <label for="">Cedula</label>
                         <input type="text" class="form-control" formControlName="cedula" name="cedula" required>
+                        <span class="text-danger"*ngIf="cedula.invalid && (cedula.ditry || cedula.touched) ">Este campo es Obligarotio</span> 
                     </div>
                     <hr>
                     <button type="submit" class="btn btn-success btn-block">Registrarse</button>

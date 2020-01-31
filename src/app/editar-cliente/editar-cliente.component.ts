@@ -15,10 +15,16 @@ export class EditarClienteComponent implements OnInit {
   form: FormGroup;
   id: number;
   agentes:Agente;
-  constructor(private clientService: ClienteServiceService,
-              private accountService: AccountService,
-            private route: ActivatedRoute, 
-            private router: Router) { 
+
+  get cedula() { return this.form.get('cedula'); }
+  get nombre() { return this.form.get('nombre'); }
+  get celular() { return this.form.get('celular'); }
+  get direccion() { return this.form.get('direccion'); }
+  get ciudad() { return this.form.get('ciudad'); }
+  get id_agente() { return this.form.get('id_agente'); }
+  
+  constructor(private clientService: ClienteServiceService,private accountService: AccountService,
+            private route: ActivatedRoute, private router: Router) { 
       this.form=new FormGroup({
         nombre: new FormControl('',Validators.required),
         cedula: new FormControl('',Validators.required),

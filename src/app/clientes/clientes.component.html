@@ -7,9 +7,9 @@
     <ul class="navbar-nav navbar-right">
         <li class="nav-item">
             <a class="nav-link" [routerLink]="['/agentes']">Agentes</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" [routerLink]="['/clientes']">Clientes</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/clientes']">Clientes</a>
         </li>
     </ul>
   </div>
@@ -61,24 +61,29 @@
           <div class="modal-body">
             <form [formGroup]="form" modal=true (submit)="saveClient()"> 
                   <div class="form-group">
-                      <label for="">Nombre Completo</label>
-                      <input type="text" class="form-control" formControlName="nombre" name="nombre" required>
+                    <label for="">Nombre Completo</label>
+                    <input type="text" class="form-control" formControlName="nombre" name="nombre" required>
+                    <span class="text-danger"*ngIf="nombre.invalid && (nombre.ditry || nombre.touched) ">Este campo es Obligarotio</span> 
                   </div>
                   <div class="form-group">
-                      <label for="">Cedula</label>
-                      <input type="text" class="form-control" formControlName="cedula" name="cedula" required>
+                    <label for="">Cedula</label>
+                    <input type="text" class="form-control" formControlName="cedula" name="cedula" required>
+                    <span class="text-danger"*ngIf="cedula.invalid && (cedula.ditry || cedula.touched) ">Este campo es Obligarotio</span> 
                   </div>
                   <div class="form-group">
                     <label for="">Celular</label>
                     <input type="text" class="form-control" formControlName="celular" name="celular" required>
+                    <span class="text-danger"*ngIf="celular.invalid && (celular.ditry || celular.touched) ">Este campo es Obligarotio</span> 
                   </div>
                   <div class="form-group">
                     <label for="">Dirección</label>
                     <input type="text" class="form-control" formControlName="direccion" name="direccion" required>
+                    <span class="text-danger"*ngIf="direccion.invalid && (direccion.ditry || direccion.touched) ">Este campo es Obligarotio</span> 
                   </div>
                   <div class="form-group">
                     <label for="">Ciudad</label>
                     <input type="text" class="form-control" formControlName="ciudad" name="ciudad" required>
+                    <span class="text-danger"*ngIf="ciudad.invalid && (ciudad.ditry || ciudad.touched) ">Este campo es Obligarotio</span> 
                   </div>
                   <div class="form-group">
                     <label for="">Agente</label>
@@ -86,6 +91,7 @@
                       <option value="" disabled="disabled">Seleccione una opcion</option>
                     <option *ngFor="let agente of agentes" value="{{agente.id}}">{{agente.nombre}}</option>  
                     </select>
+                    <span class="text-danger"*ngIf="id_agente.invalid && (id_agente.ditry || id_agente.touched) ">Este campo es Obligarotio</span> 
                   </div>
                   <hr>
                   <button type="submit" class="btn btn-success btn-block">Agregar Cliente</button>

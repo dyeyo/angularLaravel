@@ -24,8 +24,10 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
+    alert('Por favor espere, estamos procesando los datos')
     if(this.form.valid) {
       this.accountService.register(this.form.value).subscribe(r => {
+        alert('Felicidades, su cuenta fue creada, por favor ingrese')
         this.router.navigateByUrl('login');
       });
     }
