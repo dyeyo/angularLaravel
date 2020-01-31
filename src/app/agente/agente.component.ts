@@ -61,8 +61,4 @@ export class AgenteComponent implements OnInit {
     })
   }
  
- get name(){return  this.form.get('nombre')}
- get cedula(){return  this.form.get('cedula')}
- get agente(){return  this.form.get('agente')}
-
 }
