@@ -18,7 +18,7 @@
 </nav>
 
 <div class="container">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  <button type="button" (click)="showModal=true" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Agregar Agente
   </button>
 
@@ -49,9 +49,9 @@
             </div>
         </div>
     </div>
-
+</div>
     <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div [ngClass]="{'show':showModal}" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -61,7 +61,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form [formGroup]="form" (submit)="saveAgent()"> 
+        <form [formGroup]="form" > 
           <div class="form-group">
               <label for="">Nombre Completo</label>
               <input type="text" class="form-control" formControlName="nombre" name="nombre">
@@ -81,12 +81,11 @@
       
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" >Guardar Cambios</button>
+        <button type="submit" class="btn btn-primary" (click)="saveAgent()"data-dismiss="modal" >Guardar Cambios</button>
       </div>
     </form>
 
   </div>
     </div>
   </div>
-</div>
 </div>

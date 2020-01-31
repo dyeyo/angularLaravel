@@ -59,7 +59,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form [formGroup]="form" modal=true (submit)="saveClient()"> 
+            <form [formGroup]="form" modal=true> 
                   <div class="form-group">
                     <label for="">Nombre Completo</label>
                     <input type="text" class="form-control" formControlName="nombre" name="nombre" required>
@@ -94,7 +94,10 @@
                     <span class="text-danger"*ngIf="id_agente.invalid && (id_agente.ditry || id_agente.touched) ">Este campo es Obligarotio</span> 
                   </div>
                   <hr>
-                  <button type="submit" class="btn btn-success btn-block">Agregar Cliente</button>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" (click)="saveClient()"data-dismiss="modal" >Guardar Cambios</button>
+                  </div>
                 </form>
     
       </div>
